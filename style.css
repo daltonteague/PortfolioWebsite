@@ -1,0 +1,73 @@
+body {
+	color: white;
+	background: rgb(54, 58, 65) !important
+}
+
+#content {
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	vertical-align: middle;
+}
+
+#landing-content {
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	vertical-align: middle;
+}
+
+.background {
+	background-color: blue;
+}
+
+.landing-pic {
+	padding-top: 5%;
+	padding-bottom: 35%;
+	/*margin-left: 5%;*/
+	max-height: 80%;
+	max-width: 80%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+}
+
+.portfolio-pic {
+
+	max-height: 80%;
+	max-width: 80%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+}
+
+.square {
+	margin-top: 10%;
+	margin-bottom: 20%;
+	height: 100px;
+	width: 100px;
+	background-color: #FFFFFF;
+}
+
+.main-text {
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	vertical-align: middle !important;
+}
+
+.grey {
+	color: grey;
+}
+
+
+h1 {
+	font-size:400% !important;
+	/*padding-bottom: 5%;*/
+}
+
+h4 {
+	font-size:100% !important;
+	color: white;
+}
+

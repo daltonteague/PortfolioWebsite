@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Form Demo</title>
+	<title>Portfolio</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel:900&display=swap" rel="stylesheet">
+<script data-require="angular.js@1.2.0-rc3" data-semver="1.2.0-rc3" src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
 </head>
+
 <body>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
-			 <a class="navbar-brand bold-title" href="#" style="font-family:Anton;font-size: 2em;">Dalton Teague</a>
+			 <a class="navbar-brand bold-title" href="#" style="font-family:Cinzel;font-size: 2em;">Dalton Teague</a>
 			  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="oi oi-menu"></span>
 			  </button>
 
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item active">
+			      <li class="nav-item">
 			        <a class="nav-link" href="landing.html">Home <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" href="landing.html">About</a>
+			        <a class="nav-link" href="aboutme.html">About</a>
 			      </li>
-			      <li class="nav-item dropdown">
+			      <li class="nav-item dropdown active">
 			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			          Portfolio
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href="#">Web</a>
-			          <a class="dropdown-item" href="#">Mobile</a>
-			          <div class="dropdown-divider"></div>
-			          <a class="dropdown-item" href="#">Other</a>
+			          <a class="dropdown-item" href="portfolio.html?filter=all">All</a>
+			          <a class="dropdown-item" href="portfolio.html?filter=web">Web</a>
+			          <a class="dropdown-item" href="portfolio.html?filter=mobile">Mobile</a>
 			        </div>
 			      </li>
 			    </ul>
@@ -49,70 +46,100 @@
 		</div>
 	</nav>
 
-
-	<!-- <div>
-		<div class="row">
-			<div class="col-lg-8 col-md-12">
-				<div class="square"></div>
-			</div>
-		</div>
-	</div> -->
-
-	<div class="container">
-		<div class="row">
-			<div id="content" class="col-lg-12">
+	<div class="container" style="margin-top: 10%">
+		<div class="row" style="position: relative;">
+			<div id="content" class="col-lg-12 animation-element slide-down">
 				<h1 style="color: black">Projects</h1>
 			</div>
+			<div class="filter-button" onChange="filter(this)">
+        		<div class="dropdown">
+				  <button onclick="filter()" class="btn btn-secondary dropdown-toggle filter-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="filter">Filter</button>
+
+				  <div id="filterDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a id="all" class="dropdown-item" href="#" onClick="filter(this.id)">All</a>
+				    <a id="web" class="dropdown-item" href="#" onClick="filter(this.id)">Web</a>
+				    <a id="mobile" class="dropdown-item" href="#" onClick="filter(this.id)">Mobile</a>
+				  </div>
+				</div>
+			</div>
+			
 		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-6 row-lg-12">
+		<div class="row animation-element slide-left" style="margin-bottom: 10%">
+			<div class="col-lg-4 col-md-6 row-lg-12 mobile">
 				<div id="content">
 					<button class="btn btn-dark btn-md">
-						<h2 class="grey">City Circles</h2>
-						<h4>City Circles is an iOS group chat app that is based on local events and places!</h4>
-						<hr>
+						<a href="citycircles.html"class="btn btn-dark btn-md">
+							<h2 class="grey">City Circles</h2>
+							<h4>City Circles is an iOS group chat app that is based on local events, where you can connect through events near you.</h4>
+							<hr>
+						</a>
 					</button>
 					
 				</div>
 				<div class="col-lg-12">
-					<div class="img-fluid">
+					<div class="img-fluid animation-element slide-up">
 						<img class ="portfolio-pic" src="https://i.imgur.com/tkF81zo.png" alt="">
 					</div>
 				</div>
 
 			</div>
-			<div class="col-lg-4 col-md-6 row-lg-12">
-				<div id="content">
+			<div class="col-lg-4 col-md-6 row-lg-12 mobile">
+				<div id="content mobile">
 					<button class="btn btn-dark btn-md">
-						<h2 class="grey">Spacer Sprint</h2>
-						<h4>City Circles is an iOS group chat app that is based on local events and places!</h4>
-						<hr>
+						<a href="spacersprint.html"class="btn btn-dark btn-md">
+							<h2 class="grey">Spacer Sprint</h2>
+							<h4>Spacer Sprint is an endless runner iOS app made in Unity from scratch, including scripts, animations and sprites.</h4>
+							<hr>
+						</a>
 					</button>
 					
 				</div>
 				<div class="col-lg-12">
-					<div class="img-fluid">
-						<img class ="portfolio-pic" src="space_sprint_blue.png" alt="">
+					<div class="img-fluid animation-element slide-up">
+						<img class ="portfolio-pic" src="SpacerSprintScreenshots/space_sprint_blue.png" alt="">
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 row-lg-12">
-				<div id="content">
+			<div class="col-lg-4 col-md-6 row-lg-12 web">
+				<div id="content mobile">
 					<button class="btn btn-dark btn-md">
-						<h2 class="grey">Spacer Sprint</h2>
-						<h4>City Circles is an iOS group chat app that is based on local events and places!</h4>
-						<hr>
+						<a href="https://github.com/daltonteague/PortfolioWebsite"class="btn btn-dark btn-md">
+							<h2 class="grey">Portfolio Site</h2>
+							<h4>This webpage was created with HTML/CSS, Javascript, Bootstrap, and JQuery. Check out the repo here!</h4>
+							<hr>
+						</a>
 					</button>
 					
 				</div>
 				<div class="col-lg-12">
-					<div class="img-fluid">
-						<img class ="portfolio-pic" src="https://i.imgur.com/tkF81zo.png" alt="">
+					<div style="border:5px solid black" class="img-fluid animation-element slide-up">
+						<img style="width:100%;" src="portfolio_landing_pic.png" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+ 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+  	<script type="text/javascript" src="script.js"></script>
+
+	<script type="text/javascript">
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	        value = filter(value);
+	        console.log( document.getElementsByClassName("filter-text"));
+	       
+			$(".filter-text").text(value);
+	    });
+
+	    $(".dropdown-menu a").click(function(){
+	    
+			$(".filter-text").text($(this).text());
+		    // $(".btn:first-child").val($(this).text());
+		});
+	</script>
 
 
 

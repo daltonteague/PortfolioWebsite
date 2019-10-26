@@ -19,9 +19,7 @@ $(document).ready(function() {
 	    if ((element_bottom_position >= window_top_position) &&
 	        (element_top_position <= window_bottom_position)) {
 	      $element.addClass('in-view');
-	    } else {
-	      $element.removeClass('in-view');
-	    }
+	    } 
 	  });
 	}
 
@@ -36,7 +34,7 @@ function filter(sel) {
 	var mobileProjects = document.querySelectorAll(".mobile");
 	var select = document.getElementsByClassName("filter-button");
 
-	if (sel === "Mobile") {
+	if (sel === "mobile") {
 			console.log("mobile");
 		for (i = 0; i < webProjects.length; i++) {
 			webProjects[i].style.display = "none"
@@ -44,7 +42,8 @@ function filter(sel) {
 		for (i = 0; i < mobileProjects.length; i++) {
 			mobileProjects[i].style.display = "block"
 		}
-	} else if (sel === "Web") {
+		return "Mobile"
+	} else if (sel === "web") {
 			console.log("web");
 		for (i = 0; i < webProjects.length; i++) {
 			webProjects[i].style.display = "block"
@@ -52,7 +51,8 @@ function filter(sel) {
 		for (i = 0; i < mobileProjects.length; i++) {
 			mobileProjects[i].style.display = "none"
 		}
-	} else  if (sel === "All") {
+		return "Web"
+	} else  if (sel === "all") {
 			console.log("all");
 		for (i = 0; i < webProjects.length; i++) {
 			webProjects[i].style.display = "block"
@@ -60,5 +60,6 @@ function filter(sel) {
 		for (i = 0; i < mobileProjects.length; i++) {
 			mobileProjects[i].style.display = "block"
 		}
+		return "All"
 	}
 }

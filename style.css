@@ -53,7 +53,7 @@
 
 body {
 	color: white;
-	background: rgb(54, 58, 65) !important;
+	background: #343a40 !important;
 	overflow: auto;
 }
 
@@ -88,6 +88,10 @@ body {
 	height: 650px;
 }
 
+.sub-black {
+	background-color: #111111 !important;
+}
+
 
 .main-text {
 	margin-left:auto;
@@ -99,6 +103,11 @@ body {
 .box-text {
 	margin-left:5%;
 	margin-right:5%;
+}
+
+.center-list {
+	display:table; 
+	margin:0 auto;
 }
 
 .filter-button {

@@ -32,9 +32,9 @@
 			          Portfolio
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href="#">All</a>
-			          <a class="dropdown-item" href="#">Web</a>
-			          <a class="dropdown-item" href="#">Mobile</a>
+			          <a class="dropdown-item" href="portfolio.html?filter=all">All</a>
+			          <a class="dropdown-item" href="portfolio.html?filter=web">Web</a>
+			          <a class="dropdown-item" href="portfolio.html?filter=mobile">Mobile</a>
 			        </div>
 			      </li>
 			    </ul>
@@ -53,18 +53,18 @@
 			</div>
 			<div class="filter-button" onChange="filter(this)">
         		<div class="dropdown">
-				  <button onclick="filter()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="filter">Filter</button>
+				  <button onclick="filter()" class="btn btn-secondary dropdown-toggle filter-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="filter">Filter</button>
 
-				  <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="#" onClick="filter(this.text)">All</a>
-				    <a class="dropdown-item" href="#" onClick="filter(this.text)">Web</a>
-				    <a class="dropdown-item" href="#" onClick="filter(this.text)">Mobile</a>
+				  <div id="filterDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a id="all" class="dropdown-item" href="#" onClick="filter(this.id)">All</a>
+				    <a id="web" class="dropdown-item" href="#" onClick="filter(this.id)">Web</a>
+				    <a id="mobile" class="dropdown-item" href="#" onClick="filter(this.id)">Mobile</a>
 				  </div>
 				</div>
 			</div>
 			
 		</div>
-		<div class="row animation-element slide-left">
+		<div class="row animation-element slide-left" style="margin-bottom: 10%">
 			<div class="col-lg-4 col-md-6 row-lg-12 mobile">
 				<div id="content">
 					<button class="btn btn-dark btn-md">
@@ -103,9 +103,9 @@
 			<div class="col-lg-4 col-md-6 row-lg-12 web">
 				<div id="content mobile">
 					<button class="btn btn-dark btn-md">
-						<a href="landing.html"class="btn btn-dark btn-md">
+						<a href="https://github.com/daltonteague/PortfolioWebsite"class="btn btn-dark btn-md">
 							<h2 class="grey">Portfolio Site</h2>
-							<h4>Spacer Sprint is an endless runner iOS app made in Unity from scratch, including scripts, animations and sprites.</h4>
+							<h4>This webpage was created with HTML/CSS, Javascript, Bootstrap, and JQuery. Check out the repo here!</h4>
 							<hr>
 						</a>
 					</button>
@@ -120,11 +120,28 @@
 		</div>
 	</div>
 
-
+ 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
   	<script type="text/javascript" src="script.js"></script>
+
+	<script type="text/javascript">
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	        value = filter(value);
+	        console.log( document.getElementsByClassName("filter-text"));
+	       
+			$(".filter-text").text(value);
+	    });
+
+	    $(".dropdown-menu a").click(function(){
+	    
+			$(".filter-text").text($(this).text());
+		    // $(".btn:first-child").val($(this).text());
+		});
+	</script>
+
+
 
 </body>
 </html>

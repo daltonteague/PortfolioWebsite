@@ -34,7 +34,7 @@
 	  	display: block;
 	}
 
-	.mobile {
+	.mobile-view {
 		margin-top: 30% !important;
 	}
 
@@ -116,7 +116,7 @@
 		width: 100%;
 	}
 
-	.mobile {
+	.mobile-view {
 		margin-top: 10% !important;
 	}
 
